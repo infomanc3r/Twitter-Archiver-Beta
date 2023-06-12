@@ -1,0 +1,244 @@
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+  color: white;
+}
+
+.auth-form-container, .login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+    .auth-form-container {
+        padding: 5rem;
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 0.3rem;
+    }
+}
+
+label {
+    text-align: left;
+    padding: 0.5rem 0;
+}
+
+input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: none;
+    border-reduce: 10px;
+}
+
+button {
+    border: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #7439db;
+}
+
+.link-button {
+    background: none;
+    color: white;
+    text-decoration: underline;
+}
+
+.home-button {
+    background: none;
+    color: white;
+}
+
+.card1 {
+    border: 10px solid white;
+    height: 165px;
+    margin-top: 120px;
+    width: 360px;
+    float: left;
+    background-color: #7439db;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card2 {
+    border: 10px solid white;
+    height: 165px;
+    margin-top: 120px;
+    width: 360px;
+    float: left;
+    background-color: #C66FBC;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card3 {
+    border: 10px solid white;
+    height: 165px;
+    margin-top: 120px;
+    width: 360px;
+    float: left;
+    background-color: #F7944D;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card1gray {
+    border: 5px solid gray;
+    height: 165px;
+    margin-top: 120px;
+    width: 360px;
+    float: left;
+    background-color: #7439db;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card2gray {
+    border: 10px solid gray;
+    height: 165px;
+    margin-top: 120px;
+    width: 360px;
+    float: left;
+    background-color: #C66FBC;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card3gray {
+    border: 10px solid gray;
+    height: 165px;
+    margin-top: 120px;
+    width: 360px;
+    float: left;
+    background-color: #F7944D;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.card-body {
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.card-body-gray {
+    object-fit: contain;
+}
+
+.home-container{
+    color: white;
+
+}
+
+.banner-container{
+    display: block;
+    font-size: 2.5em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    margin-bottom: 50px;
+
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.toLogin-button {
+    padding-left:150px;
+    padding-right:150px;
+}
+
+.toDashboard-button {
+    padding-left:150px;
+    padding-right:150px;
+}
+
+.Footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-width: 100%;
+    border: 1px solid white
+}
+
+a {
+  color: #FFF;
+}
+a:hover {
+   color: #00F
+}
+
+.card-header {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.card-header-gray {
+    font-size: 1.5em;
+    color: #565a61;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}

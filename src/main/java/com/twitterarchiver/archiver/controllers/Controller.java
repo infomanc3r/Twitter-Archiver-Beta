@@ -20,7 +20,6 @@ import java.util.List;
 @RestController
 public class Controller {
     private static final ApplicationComponent component = App.component;
-
     private DynamoDao dynamoDao = component.provideDynamoDao();
     private TweetsDao tweetsDao = component.provideTweetsDao();
 
@@ -29,10 +28,8 @@ public class Controller {
 
     @GetMapping("/archive")
     public ResponseEntity<?> archiveTweets(@RequestParam(value = "userId") String userId) throws IOException, URISyntaxException {
-
-        System.out.println("Archive button clicked - attempting archive");
-
         // Retrieve tweets (in form of JSONObject)
+        System.out.println("bearer token currently:" + bearerToken);
         JSONObject response = tweetsDao.getTweetsById(userId, bearerToken);
 
         // Convert tweets from Json to a list of Tweet objects
@@ -41,9 +38,7 @@ public class Controller {
         // Publish the tweets to the DynamoDB database
         dynamoDao.publishTweets(tweets);
 
-        System.out.println("Archive process completed - attempting to return HttpStatus");
-
         return new ResponseEntity<>(HttpStatus.OK);
 
-    }   // TODO: add input checking/tests for input checking, switch to logging, handle exceptions elsewhere
+    }   // TODO: add input checking/tests for input checking, logging, handle exceptions, better response
 }

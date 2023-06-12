@@ -12,12 +12,11 @@ public class Tweet {
     private String tweet;
     private String timestamp;
 
-
     public Tweet(String userID, String tweet, String timestamp) {
         this.userID = userID;
         this.tweet = tweet;
         this.timestamp = timestamp;
-    }   //TODO: refactor into builder pattern
+    }   // TODO: refactor into builder pattern
 
     @DynamoDBHashKey(attributeName = "userID")
     public String getUserID() {

@@ -26,9 +26,7 @@ public class TweetsDao {
 
     /**
      * Instantiates a TweetsDao object.
-     *
      */
-
     @Inject
     public TweetsDao(DynamoDBMapper dynamoDBMapper) { this.dynamoDBMapper = dynamoDBMapper; }
 
@@ -63,6 +61,7 @@ public class TweetsDao {
                 .build();
 
         URIBuilder uriBuilder = new URIBuilder(String.format("https://api.twitter.com/2/users/%s/tweets", userId));
+
         ArrayList<NameValuePair> queryParameters;
         queryParameters = new ArrayList<>();
         queryParameters.add(new BasicNameValuePair("tweet.fields", "created_at"));
