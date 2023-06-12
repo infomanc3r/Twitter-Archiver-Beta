@@ -29,8 +29,9 @@ bearer.token=${BEARER_TOKEN:bearerToken}
 
 ### 3) Build the front-end
 You must have [Node Package Manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) installed to properly build the frontend.
-Once it is installed, navigate to the TwitterArchiver/frontend folder in your command line and run the following command:
+Once it is installed, navigate to the TwitterArchiver/frontend folder in your command line and run the following commands:
 ```
+npm install
 npm run build
 ```
 ## Running
