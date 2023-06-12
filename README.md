@@ -52,3 +52,4 @@ The current beta release prompts for a converted user id (roadmap includes allow
 - [ ] Add additional features
     - [ ] Archive Followers by User
     - [ ] Archive Likes by Tweet
+- [ ] Package frontend and backend into one-click solution (.jar? .exe?)
