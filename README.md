@@ -47,10 +47,10 @@ The current beta release prompts for a converted user id (roadmap includes allow
 
 ## Roadmap
 - [x] Format README
+    - [x] Check this box 
 - [x] Merge frontend
 - [x] Archive Tweets by User
     - [ ] Add user input with Twitter handle directly instead of requiring user to convert it 
-- [ ] Add additional features
-    - [ ] Archive Followers by User
-    - [ ] Archive Likes by Tweet
+- [ ] Archive Followers by User
+- [ ] Archive Likes by Tweet
 - [ ] Package frontend and backend into one-click solution (.jar? .exe?)
