@@ -196,20 +196,6 @@ button {
     padding-right:150px;
 }
 
-.Footer {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-image: linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
-    color: white;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-width: 100%;
-    border: 1px solid white
-}
-
 a {
   color: #FFF;
 }
