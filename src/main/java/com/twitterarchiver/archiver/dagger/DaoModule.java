@@ -10,7 +10,6 @@ import dagger.Provides;
 
 @Module
 public class DaoModule {
-
     @Provides
     public TweetsDao provideTweetsDao(DynamoDBMapper mapper) { return new TweetsDao(mapper); }
 
