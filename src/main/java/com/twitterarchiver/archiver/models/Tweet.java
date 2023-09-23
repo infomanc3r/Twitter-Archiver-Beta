@@ -1,4 +1,4 @@
-package com.twitterarchiver.archiver.dynamodb.models;
+package com.twitterarchiver.archiver.models;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
