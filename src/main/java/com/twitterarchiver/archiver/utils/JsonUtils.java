@@ -1,6 +1,6 @@
 package com.twitterarchiver.archiver.utils;
 
-import com.twitterarchiver.archiver.models.Tweet;
+import com.twitterarchiver.archiver.dynamodb.models.Tweet;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.util.ArrayList;

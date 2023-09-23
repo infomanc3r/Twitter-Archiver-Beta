@@ -1,5 +1,7 @@
 package com.twitterarchiver.archiver.dagger;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.twitterarchiver.archiver.daos.DynamoDao;
 import com.twitterarchiver.archiver.daos.TweetsDao;
 import dagger.Component;
 
@@ -8,6 +10,8 @@ import dagger.Component;
 })
 public interface ApplicationComponent {
 
+    DynamoDao provideDynamoDao();
     TweetsDao provideTweetsDao();
+    DynamoDBMapper provideDynamoDBMapper();
 
 }

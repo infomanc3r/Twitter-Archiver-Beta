@@ -1,5 +1,6 @@
 package com.twitterarchiver.archiver.daos;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -7,13 +8,12 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
-
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -22,9 +22,13 @@ import java.util.ArrayList;
 @Singleton
 public class TweetsDao {
 
+    private final DynamoDBMapper dynamoDBMapper;
+
     /**
      * Instantiates a TweetsDao object.
      */
+    @Inject
+    public TweetsDao(DynamoDBMapper dynamoDBMapper) { this.dynamoDBMapper = dynamoDBMapper; }
 
     public JSONObject getTweetsById(String userId, String bearerToken) throws IOException, URISyntaxException {
 
@@ -77,34 +81,5 @@ public class TweetsDao {
         return new JSONObject(tweetResponse);
 
     }   // TODO: use builder pattern to construct a Request object that can dynamically include tweet attributes
-
-    public JSONObject sendTweet (String tweet, String bearerToken) throws IOException, URISyntaxException {
-        String tweetResponse = null;
-
-        HttpClient httpClient = HttpClients.custom()
-                .setDefaultRequestConfig(RequestConfig.custom()
-                .setCookieSpec(CookieSpecs.STANDARD).build())
-                .build();
-
-        URIBuilder uriBuilder = new URIBuilder("https://api.twitter.com/1.1/statuses/update.json");
-
-        ArrayList<NameValuePair> queryParameters;
-        queryParameters = new ArrayList<>();
-        queryParameters.add(new BasicNameValuePair("status", tweet));
-        uriBuilder.addParameters(queryParameters);
-
-        HttpPost httpPost = new HttpPost(uriBuilder.build());
-        httpPost.setHeader("Authorization", String.format("Bearer %s", bearerToken));
-        httpPost.setHeader("Content-Type", "application/json");
-
-        HttpResponse response = httpClient.execute(httpPost);
-        HttpEntity entity = response.getEntity();
-        // Convert JSON to string - consider processing the JSON directly
-        if (null != entity) {
-            tweetResponse = EntityUtils.toString(entity, "UTF-8");
-        }
-
-        return new JSONObject(tweetResponse);
-    }
 
 }
